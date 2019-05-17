@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { CarDataService } from '../car-data.service';
 import { ICar } from './../car';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cars-list',
@@ -18,7 +19,7 @@ export class CarsListComponent implements OnInit {
 
   carsLoading = false;
 
-  constructor(private _carService: CarDataService) { }
+  constructor(private router: Router,private _carService: CarDataService) { }
 
   ngOnInit() {
     this.carsLoading = true;
@@ -29,6 +30,12 @@ export class CarsListComponent implements OnInit {
     });
 
 
+  }
+
+  displayCarsDetail(car){
+    //console.log(car);
+    
+    this.router.navigate(['/carsList', car._id ]);
   }
 
 }

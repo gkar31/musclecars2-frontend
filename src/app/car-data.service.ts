@@ -15,4 +15,8 @@ export class CarDataService {
   getCars(): Observable<ICar[]>{
     return this.http.get<ICar[]>(this._url);
   }
+
+  getCar(idCar): Observable<ICar>{
+    return this.http.get<ICar>(this._url+"/"+idCar);
+  }
 }

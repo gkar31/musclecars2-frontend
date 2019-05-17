@@ -1,24 +1,28 @@
 table {
-    width: 100%;
-  }
-  
-  .custom-mat-column-picture {
-    flex: 0 0 100px !important;
-    width: 150px !important;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-  }
-  
-  .custom-mat-header {
-    background-color: blue;
-    color: white;
-    font-weight: bold;
-    font-size: 14px;
-    font-family: sans-serif;
-    width: auto;
-  }
-  
-  .custom-mat-column-name {
-    width: 30%;
-  }
-  
+  width: 100%;
+  cursor: pointer;
+}
+
+.mat-row:hover {
+  background-color: #F5F5F5;
+}
+
+.custom-mat-column-picture {
+  flex: 0 0 100px !important;
+  width: 150px !important;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+.custom-mat-header {
+  background-color: blue;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  font-family: sans-serif;
+  width: auto;
+}
+
+.custom-mat-column-name {
+  width: 30%;
+}

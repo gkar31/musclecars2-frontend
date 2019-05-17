@@ -44,6 +44,6 @@
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns" [ngClass]="'custom-mat-header'" ></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    <tr mat-row (click)="displayCarsDetail(row)" *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 </div>

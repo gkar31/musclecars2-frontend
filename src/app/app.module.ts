@@ -8,11 +8,13 @@ import { MaterialModule } from './material/material.module';
 import { CarDataService } from './car-data.service';
 import { CarsListComponent } from './cars-list/cars-list.component';
 import { HttpClientModule }  from '@angular/common/http';
+import { CarDetailComponent } from './car-detail/car-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CarsListComponent
+    CarsListComponent,
+    CarDetailComponent
   ],
   imports: [
     BrowserModule,
