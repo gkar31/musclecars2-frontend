@@ -1,14 +1,24 @@
 import { NgModule } from '@angular/core';
-import { MatButtonModule } from '@angular/material';
+import { CommonModule } from '@angular/common';
 
 
-const MaterialComponents = [
-  MatButtonModule
-]
+import {
+  MatButtonModule,
+  MatTableModule,
+  MatChipsModule,
+  MatProgressSpinnerModule
+} from '@angular/material';
 
+const Material = [
+  MatButtonModule,
+  MatTableModule,
+  MatChipsModule,
+  MatProgressSpinnerModule
+];
 
 @NgModule({
-  imports: [ MaterialComponents ],
-  exports: [ MaterialComponents ]
+  imports: [Material],
+  exports: [Material]
 })
-export class MaterialModule { }
+export class MaterialModule {}
+
