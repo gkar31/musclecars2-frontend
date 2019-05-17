@@ -1,20 +1,24 @@
 <p>
   You have selected the musclecar {{ idCar }}
   </p>
-  <h1 *ngIf="currentCar"> {{currentCar.Marque}} &nbsp; {{currentCar.Modele}} &nbsp; {{ currentCar.Serie }}</h1>
-  <ul *ngIf="currentCar">
-    <li>  {{currentCar.Cylindres}} cylindres </li>
-    <li>  {{currentCar.Cylindree}} litres </li>
-    <li>  <b>Puissance :</b> &nbsp; {{currentCar.Puissance_ch}} chevaux </li>
-    <li>  <b>Couple :</b> &nbsp; {{currentCar.Couple_Nm}} N.m </li>
-    <li>  <b>Vitesse Max. :</b> &nbsp; {{currentCar.VitesseMax_Kmh}} Km/h </li>
-    <li>  <b>0-100 km/h :</b> &nbsp; {{currentCar.acc_0_100}} secondes </li>
-    <li>  <b>0-200 km/h :</b> &nbsp; {{currentCar.acc_0_200}} seconde </li>
-    <li>  <b>400m D.a :</b> &nbsp; {{currentCar.acc_400m_DA}} secondes </li>
-    <li>  <b>1000m D.a :</b> &nbsp; {{currentCar.acc_1000m_DA}} secondes </li>
-    <li>  <b>Prix :</b> &nbsp; {{currentCar.Prix}} euros </li>
-  </ul>
-  <div *ngIf="currentCar">
-      <img  src="{{currentCar.Image}}" alt="No picture avalaible" height="315px" width="600px">  
-    </div>
   
+  <mat-spinner *ngIf="carLoading"></mat-spinner>
+
+  <div *ngIf="!carLoading">
+    <h1 *ngIf="currentCar"> {{currentCar.Marque}} &nbsp; {{currentCar.Modele}} &nbsp; {{ currentCar.Serie }}</h1>
+    <ul *ngIf="currentCar">
+      <li>  {{currentCar.Cylindres}} cylindres </li>
+      <li>  {{currentCar.Cylindree}} litres </li>
+      <li>  <b>Puissance :</b> &nbsp; {{currentCar.Puissance_ch}} chevaux </li>
+      <li>  <b>Couple :</b> &nbsp; {{currentCar.Couple_Nm}} N.m </li>
+      <li>  <b>Vitesse Max. :</b> &nbsp; {{currentCar.VitesseMax_Kmh}} Km/h </li>
+      <li>  <b>0-100 km/h :</b> &nbsp; {{currentCar.acc_0_100}} secondes </li>
+      <li>  <b>0-200 km/h :</b> &nbsp; {{currentCar.acc_0_200}} seconde </li>
+      <li>  <b>400m D.a :</b> &nbsp; {{currentCar.acc_400m_DA}} secondes </li>
+      <li>  <b>1000m D.a :</b> &nbsp; {{currentCar.acc_1000m_DA}} secondes </li>
+      <li>  <b>Prix :</b> &nbsp; {{currentCar.Prix}} euros </li>
+    </ul>
+    <div *ngIf="currentCar">
+        <img  src="{{currentCar.Image}}" alt="No picture avalaible" height="315px" width="600px">  
+      </div>
+  </div>
