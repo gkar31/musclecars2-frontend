@@ -17,11 +17,35 @@ export class CarDataService {
   private _localLogoUrl: string ="http://localhost:4000/logo";
   
 
+  CAR_DEFAULT_DATA: ICar[] = [
+    { 
+  Couple_Nm: 0,
+  Cylindree: 0,
+  Cylindres: 0,
+  Image: "",
+  Indice_Perf: 0,
+  Marque: "Error",
+  Modele: "from Server",
+  Prix: "",
+  Puissance_ch: 0,
+  Serie: "",
+  VitesseMax_Kmh: 0,
+  acc_0_100: 0,
+  acc_0_200: 0,
+  acc_1000m_DA: 0,
+  acc_400m_DA: 0}
+  ];
+
   constructor(private http: HttpClient) { }
 
   getCars(): Observable<ICar[]>{
     return this.http.get<ICar[]>(this._url);
   }
+
+
+  getErrorDefaultCar(): ICar[] {
+    return this.CAR_DEFAULT_DATA;
+   }
 
   getCar(idCar): Observable<ICar>{
     return this.http.get<ICar>(this._url+"/"+idCar);

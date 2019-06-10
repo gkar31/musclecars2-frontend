@@ -1,8 +1,30 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
+
+import { MatSort } from "@angular/material/sort";
+import { MatTableDataSource } from '@angular/material/table';
 
 import { CarDataService } from '../car-data.service';
 import { ICar } from './../car';
-import { Router } from '@angular/router';
+
+const CAR_DATA: ICar[] = [
+  { 
+Couple_Nm: 0,
+Cylindree: 0,
+Cylindres: 0,
+Image: "",
+Indice_Perf: 0,
+Marque: "Loading...",
+Modele: "from Server",
+Prix: "",
+Puissance_ch: 0,
+Serie: "",
+VitesseMax_Kmh: 0,
+acc_0_100: 0,
+acc_0_200: 0,
+acc_1000m_DA: 0,
+acc_400m_DA: 0}
+];
 
 @Component({
   selector: 'app-cars-list',
@@ -13,9 +35,12 @@ export class CarsListComponent implements OnInit {
   
   public cars:ICar[] = [];
 
-  displayedColumns: string[] = ['Picture', 'Name', 'Power', 'Couple', 'Perf'];
+  @ViewChild(MatSort, {static: true}) sort: MatSort;
 
-  dataSource:ICar[] = [];
+  displayedColumns: string[] = ['Image', 'Marque', 'Puissance_ch', 'Couple_Nm', 'Indice_Perf'];
+  dataSource = new MatTableDataSource(CAR_DATA);
+
+
 
   carsLoading = false;
 
@@ -26,8 +51,15 @@ export class CarsListComponent implements OnInit {
     this._carService.getCars()
     .subscribe(data => {
       this.carsLoading=false;
-      this.dataSource = data
-    });
+      this.dataSource = new MatTableDataSource(data);
+      this.dataSource.sort = this.sort;
+      this.carsLoading=false;
+    },err => {
+      console.error(err);
+      this.dataSource = new MatTableDataSource(this._carService.getErrorDefaultCar());
+      this.dataSource.sort = this.sort;
+        this.carsLoading=false;
+      });
 
 
   }
@@ -36,6 +68,11 @@ export class CarsListComponent implements OnInit {
     //console.log(car);
     
     this.router.navigate(['/carsList', car._id ]);
+  }
+
+
+  applyFilter(filterValue: string){
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }
