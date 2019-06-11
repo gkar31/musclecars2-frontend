@@ -9,6 +9,7 @@ import { CarDataService } from './car-data.service';
 import { CarsListComponent } from './cars-list/cars-list.component';
 import { HttpClientModule }  from '@angular/common/http';
 import { CarDetailComponent } from './car-detail/car-detail.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { CarDetailComponent } from './car-detail/car-detail.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    HttpClientModule
+    HttpClientModule,
+    FlexLayoutModule
   ],
   providers: [CarDataService],
   bootstrap: [AppComponent]
