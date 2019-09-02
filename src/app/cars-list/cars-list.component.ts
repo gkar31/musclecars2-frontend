@@ -73,6 +73,11 @@ export class CarsListComponent implements OnInit {
 
   applyFilter(filterValue: string){
     this.dataSource.filter = filterValue.trim().toLowerCase();
+    this.dataSource.filterPredicate = function(data, filter: string): boolean {
+
+      return data.Marque.toLowerCase().includes(filter) || data.Modele.toLowerCase().includes(filter) || 
+      data.Couple_Nm.toString().toLowerCase().includes(filter) || data.Puissance_ch.toString().includes(filter) || (data.Serie && data.Serie.toLowerCase().includes(filter));
+  };
   }
 
 }
