@@ -1,0 +1,43 @@
+table {
+    width: 100%;
+  }
+
+  .navbar {
+    justify-content:  space-between;
+  }
+
+
+  span {
+    padding-right: 1rem;
+    
+  }
+
+
+  .menu-button{
+    font-size: 19px;
+  }
+
+  .center_title {
+    justify-content:  space-between;
+    top: 50%;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    
+  }
+
+
+  .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+  }
+
+  .main { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: url(https://nationalinterest.org/sites/default/files/styles/desktop__1486_x_614/public/main_images/desgsdergserdgr.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 600px;
+    height: 100%;
+    width: 100%;
+  }
