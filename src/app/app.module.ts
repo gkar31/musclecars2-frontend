@@ -10,12 +10,14 @@ import { CarsListComponent } from './cars-list/cars-list.component';
 import { HttpClientModule }  from '@angular/common/http';
 import { CarDetailComponent } from './car-detail/car-detail.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarsListComponent,
-    CarDetailComponent
+    CarDetailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,48 @@
+.main { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
+    background: url('/assets/img/musclecar_plus_logo.jpg') no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 600px;
+    height: 100%;
+    width: 100%;
+  }
+
+
+.wallpaper-div {
+   margin: 0;
+   background: url(../../assets/img/musclecar_plus_logo.jpg) no-repeat center center;
+   background-size: cover;
+   background-attachment: fixed;
+   min-height: 600px;
+   height: 100%;
+   width: 100%;
+}
+
+.wallpaper-img{
+    width: fit-content;
+    height: fit-content;
+     
+ }
+ 
+
+.test {
+    background-image: '../../assets/img/musclecar_plus_logo.jpg';
+    
+}
+
+
+.wallpaper {
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 2;
+}
+
+.splash {
+    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start; 
+    
+    
+}
